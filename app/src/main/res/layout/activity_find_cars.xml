@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fefefe"
+    tools:context=".FindCars">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/findCars_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:elevation="4dp"
+        android:theme="@style/ToolbarStyle"
+        app:popupTheme="@style/Base.ThemeOverlay.AppCompat.Light"></android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/carsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/findCars_toolbar"
+        android:layout_alignParentStart="true"
+        android:background="@color/white"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/myGif"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/loading1"
+        android:background="#fefefe"
+        android:visibility="visible" />
+</RelativeLayout>

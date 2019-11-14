@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_margin="7dp"
+    android:elevation="10dp"
+    android:orientation="vertical"
+    android:padding="2dp"
+    app:cardCornerRadius="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="3dp"
+        android:background="@drawable/grey_white_border"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/carImage"
+            android:layout_width="120dp"
+            android:layout_height="150dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/loading1"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/carName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/carImage"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/carImage"
+            android:text="Car Name"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/booking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalCharges"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/carImage"
+            android:background="@drawable/book_button"
+            android:elevation="5dp"
+            android:onClick="booking"
+            android:padding="5dp"
+            android:text="Book Now"
+            android:textColor="#050505"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_alignBottom="@+id/carImage"
+            android:layout_below="@id/priceText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="33dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/carImage"
+            android:text="Quantity" />
+
+        <TextView
+            android:id="@+id/perHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/priceText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/quantity"
+            android:text=" ,per Head Kms" />
+
+        <TextView
+            android:id="@+id/priceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/modelno"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/carImage"
+            android:text="Base Price (25Kms):"
+            android:textColor="#050505" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/modelno"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/priceText"
+            android:text="carPrice" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/carName"
+            android:layout_below="@+id/carName"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/carImage"
+            android:text="Model Number:"
+            android:textColor="#050505" />
+
+        <TextView
+            android:id="@+id/modelno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carName"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/textView6"
+            android:text="CarModel" />
+
+        <TextView
+            android:id="@+id/totalKms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/carName"
+            android:layout_below="@+id/perHead"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/carImage"
+            android:text="Total Kms :"
+            android:textColor="#050505" />
+
+        <TextView
+            android:id="@+id/kmsValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/perHead"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/totalKms"
+            android:text="hello" />
+
+        <TextView
+            android:id="@+id/totalCharges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/carName"
+            android:layout_below="@+id/totalKms"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/carImage"
+            android:text="Charges :"
+            android:textColor="#050505" />
+
+        <TextView
+            android:id="@+id/chargesValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalKms"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/totalCharges"
+            android:text="bye" />
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

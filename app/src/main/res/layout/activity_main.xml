@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fefefe"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:theme="@style/ToolbarStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/Base.ThemeOverlay.AppCompat.Light"></android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/startCity"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/main_toolbar"
+        app:layout_constraintStart_toStartOf="@+id/main_toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/main_toolbar">
+
+        <RelativeLayout
+            android:id="@+id/cityBar"
+            android:layout_width="258dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/text"
+            android:background="@drawable/white"
+            android:elevation="5dp"
+            android:padding="2dp">
+
+            <ImageView
+                android:id="@+id/cityDrawable"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/city" />
+
+            <!--<TextView
+                android:id="@+id/startCity"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="56dp"
+                android:gravity="center_vertical"
+                android:text="City"
+                android:textAlignment="gravity"
+                android:textSize="17sp" />-->
+            <EditText
+                android:id="@+id/pickupCity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/cityDrawable"
+                android:background="#fdfdfd"
+                android:gravity="center_vertical"
+                android:hint="City" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:padding="2dp"
+            android:text="Pick Up :"
+            android:textAllCaps="false"
+            android:textColor="#3a3636"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="2dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Destination Location"
+        android:textColor="#3a3636"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/dhamaka"
+        app:layout_constraintStart_toStartOf="@+id/dhamaka" />
+
+    <RelativeLayout
+        android:id="@+id/dhamaka"
+        android:layout_width="320dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/white"
+        android:padding="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endCity">
+
+        <ImageView
+            android:id="@+id/locationSearch"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/location_search" />
+
+        <TextView
+            android:id="@+id/endingLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/locationSearch"
+            android:onClick="endingLocationSet"
+            android:padding="3dp"
+            android:text="Tap here to set ending point" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/endCity"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dhamaka2">
+
+        <RelativeLayout
+            android:id="@+id/endcityBar"
+            android:layout_width="258dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/text1"
+            android:background="@drawable/white"
+            android:elevation="5dp"
+            android:padding="2dp">
+
+            <ImageView
+                android:id="@+id/endCityDrawable"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/city" />
+
+            <!--<TextView
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="56dp"
+                android:gravity="center_vertical"
+                android:text="City"
+                android:textAlignment="gravity"
+                android:textSize="17sp" />-->
+            <EditText
+                android:id="@+id/dropOffCity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/endCityDrawable"
+                android:background="#fdfdfd"
+                android:hint="City" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:fontFamily="sans-serif-smallcaps"
+            android:padding="2dp"
+            android:text="Drop Off :"
+            android:textColor="#3a3636"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/simple_pointingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="2dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Origin Location"
+        android:textColor="#3a3636"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/dhamaka2"
+        app:layout_constraintStart_toStartOf="@+id/dhamaka2" />
+
+    <!--<TextView
+        android:id="@+id/startingLocation"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/simple_pointingText"
+        android:layout_marginBottom="125dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/white"
+        android:onClick="startingLocationSet"
+        android:padding="5dp"
+        android:text="Tap here to set starting point"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />-->
+    <RelativeLayout
+        android:id="@+id/dhamaka2"
+        android:layout_width="320dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/white"
+        android:padding="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startCity">
+
+        <ImageView
+            android:id="@+id/locationSearch2"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/location_search" />
+
+        <TextView
+            android:id="@+id/startingLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/locationSearch2"
+            android:onClick="startingLocationSet"
+            android:padding="3dp"
+            android:text="Tap here to set starting point" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="145dp"
+        android:layout_height="49dp"
+        android:layout_alignEnd="@+id/startCity"
+        android:layout_alignTop="@+id/relativeLayout1"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/white"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout10"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/encal"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7dp"
+            android:adjustViewBounds="false"
+            android:background="#fdfdfd"
+            android:src="@drawable/prcalendr" />
+
+        <TextView
+            android:id="@+id/endDate"
+            android:layout_width="92dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_toRightOf="@+id/encal"
+            android:background="#fdfdfd"
+            android:gravity="center_vertical"
+            android:onClick="dateSet"
+            android:padding="7dp"
+            android:tag="1"
+            android:text="End Date"
+            android:textAlignment="gravity"
+            android:textColor="#050505"
+            android:textStyle="italic" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_above="@+id/relativeLayout2"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="2dp"
+        android:layout_marginStart="2dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="End Date"
+        android:textColor="#3a3636"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout2" />
+
+    <TextView
+        android:id="@+id/endTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/relativeLayout2"
+        android:layout_marginBottom="2dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="End Time"
+        android:textColor="#3a3636"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout10"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout10" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="145dp"
+        android:layout_height="49dp"
+        android:layout_alignStart="@+id/endCity"
+        android:layout_below="@+id/startDateText"
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/white"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout11"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/stcal"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7dp"
+            android:background="#fdfdfd"
+            android:src="@drawable/prcalendr" />
+
+        <TextView
+            android:id="@+id/startDate"
+            android:layout_width="96dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_toRightOf="@+id/stcal"
+            android:background="#fdfdfd"
+            android:gravity="center_vertical"
+            android:onClick="dateSet"
+            android:padding="7dp"
+            android:tag="2"
+            android:text="Start Date"
+            android:textAlignment="gravity"
+            android:textColor="#050505"
+            android:textStyle="italic" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/startDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/endCity"
+        android:layout_marginBottom="2dp"
+        android:layout_marginStart="2dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Start Date"
+        android:textAllCaps="false"
+        android:textColor="#3a3636"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout1"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout1" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout10"
+        android:layout_width="145dp"
+        android:layout_height="49dp"
+        android:layout_alignEnd="@+id/startCity"
+        android:layout_below="@+id/endTimeText"
+        android:layout_marginBottom="82dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/enTim"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7dp"
+            android:adjustViewBounds="false"
+            android:background="#fdfdfd"
+            android:src="@drawable/prclock" />
+
+        <TextView
+            android:id="@+id/endTime"
+            android:layout_width="92dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_toRightOf="@+id/enTim"
+            android:background="#fdfdfd"
+            android:gravity="center_vertical"
+            android:onClick="timeSet"
+            android:padding="7dp"
+            android:tag="1"
+            android:text="End Time"
+            android:textAlignment="gravity"
+            android:textColor="#050505"
+            android:textStyle="italic" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout11"
+        android:layout_width="145dp"
+        android:layout_height="49dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/relativeLayout10"
+        android:layout_marginBottom="82dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/stTim"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7dp"
+            android:adjustViewBounds="false"
+            android:background="#fdfdfd"
+            android:src="@drawable/prclock" />
+
+        <TextView
+            android:id="@+id/startTime"
+            android:layout_width="92dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_toRightOf="@+id/stTim"
+            android:background="#fdfdfd"
+            android:gravity="center_vertical"
+            android:onClick="timeSet"
+            android:padding="7dp"
+            android:tag="2"
+            android:text="Start Time"
+            android:textAlignment="gravity"
+            android:textColor="#050505"
+            android:textStyle="italic" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relativeLayout11"
+        android:layout_alignStart="@+id/endCity"
+        android:layout_marginBottom="2dp"
+        android:layout_marginStart="2dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Start Time"
+        android:textColor="#3a3636"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout11"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout11" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="159dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/grey_border"
+        android:gravity="center"
+        android:onClick="findCars"
+        android:padding="10dp"
+        android:text="Find Cars"
+        android:textAlignment="gravity"
+        android:textColor="#fbfafa"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="255dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="430dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="192dp" />
+
+
+</android.support.constraint.ConstraintLayout>

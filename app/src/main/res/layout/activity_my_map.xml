@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyMap">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ToolbarStyle"
+        app:popupTheme="@style/Base.ThemeOverlay.AppCompat.Light"></android.support.v7.widget.Toolbar>
+
+    <fragment
+        android:id="@+id/map"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_below="@+id/my_toolbar"
+        tools:context=".MyMap" />
+
+    <!--<android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/rL1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="81dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_menu_mylocation"
+        android:tint="#1f1d1d"
+        app:backgroundTint="#fbf9fb" />-->
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/mymarker"
+        android:tint="#1f1d1d" />
+
+    <Button
+        android:id="@+id/show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/map"
+        android:layout_centerHorizontal="true"
+        android:background="#289615"
+        android:text="Continue"
+        android:onClick="setLocation"
+        android:textColor="#fefefe"
+        android:textSize="18sp"
+        android:textStyle="italic" />
+
+    <RelativeLayout
+        android:layout_width="330dp"
+        android:layout_height="44dp"
+        android:id="@+id/rL1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="79dp"
+        android:background="@drawable/grey_white_border"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/magnify"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_magnify" />
+
+        <TextView
+            android:id="@+id/search"
+            android:layout_width="290dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/magnify"
+            android:gravity="center_vertical"
+            android:textAlignment="gravity"
+            android:textColor="#000"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
+</FrameLayout>
